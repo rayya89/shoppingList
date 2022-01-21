@@ -1,24 +1,41 @@
-import logo from './logo.svg';
+import React, { useState, useEffect } from "react";
 import './App.css';
+import NavBar from './components/NavBar';
+import HomePage from './components/HomePage';
+import ShopPage from './components/ShopPage';
+import PageNotFound from './components/PageNotFound';
+import { Routes, Route, useNavigate } from 'react-router-dom';
+
 
 function App() {
+
+  const navigate = useNavigate();
+
+  useEffect(() => {
+    newUser();
+  },[]);
+
+const newUser = () => {
+   if(localStorage.getItem("items") === null) {
+   navigate("/")
+   } else {
+    navigate("/Shop");
+   }
+ }
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+     
+      <div className="App">
+            <NavBar/>
+            
+              <Routes>
+                  <Route path="/" element={<HomePage/>} />
+                  <Route path="/Shop" element={<ShopPage/>} />
+                  <Route path="/*" element={<PageNotFound/>} />
+                  <Route />
+              </Routes>
+          
+      </div>
   );
 }
 

@@ -1,38 +1,235 @@
-.App {
-  text-align: center;
+@font-face {
+  font-family: noto;
+  src: url(/public/fonts/NotoSans-Regular.ttf);
 }
 
-.App-logo {
-  height: 40vmin;
+@font-face {
+  font-family: noto-bold;
+  src: url(/public/fonts/NotoSans-Bold.ttf);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  color: rgb(5, 5, 5);
+  font-family: noto;
+  height: 100vh;
+  flex-direction: column;
+}
+
+h1 {
+  font-family: noto-bold;
+}
+
+.item-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 2.3rem;
+}
+
+.item {
+  margin: 0.5rem;
+  font-size: 17px;
+  font-family: noto;
+  color: black;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  transition: all 1s ease;
+}
+
+.item li {
+  flex: 1;
+}
+
+.trash-btn,
+.complete-btn {
+  color: grey;
+  border: none;
+  padding: 8px;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+.item-row {
+  padding: 0rem 0.7rem;
+  list-style-type: none;
+}
+
+.fa-trash,
+.fa-check {
   pointer-events: none;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.completed {
+  text-decoration: line-through;
+  opacity: 0.5;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+select {
+  padding: 1.5 rem;
+  border-color: rgb(180, 172, 172);
+  border-radius: 4px;
+  width: 150px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 15px;
+  cursor: pointer;
+  font-family: noto;
+}
+
+nav {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  min-height: 10vh;
+  color: #f7fffe;
+}
+
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  font-family: noto;
+}
+
+li {
+  float: right;
+  display: block;
+  text-align: center;
+  padding: 20px;
+}
+
+p {
+  width: 45rem;
+  text-align: justify;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  font-family: noto;
+}
+
+.bg-Modal {
+  width: 100%;
+  height: 100%;
+  background-color: rgba(128, 128, 128, 0.7);
+  position: absolute;
+  top: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.modal-Container {
+  width: 500px;
+  height: 500px;
+  background-color: white;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  border-radius: 12px;
+  padding: 25px;
+  position: relative;
   display: flex;
   flex-direction: column;
+}
+
+.modal-Title {
+  display: block;
+  text-align: center;
+  margin-top: 10px;
+  color: black;
+}
+
+.item-input {
+  width: 50%;
+  display: block;
+  margin: 15px auto;
+}
+
+.close-Button {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.close-Button button {
+  background-color: transparent;
+  border: none;
+  font-size: 25px;
+  transform: rotate(45deg);
+  cursor: pointer;
+}
+
+.modal-Body {
+  justify-content: center;
+  align-items: center;
+  font-size: 1.7rem;
+  font-family: noto;
+  text-align: center;
+}
+
+.submit-Button {
+  width: 150px;
+  height: 45px;
+  margin: 10px;
+  border: none;
+  background-color: grey;
+  color: white;
+  border-radius: 8px;
+  font-size: 20px;
+  font-family: noto-bold;
+  cursor: pointer;
+}
+
+.home-Button {
+  width: 170px;
+  height: 45px;
+  margin: 10px;
+  border: none;
+  background-color: grey;
+  color: white;
+  border-radius: 8px;
+  font-family: noto;
+  font-size: 20px;
+  cursor: pointer;
+}
+
+.home-Page {
+  display: flex;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  flex-direction: column;
+  padding: 1.5rem;
+  margin: 4rem;
+  font-family: noto;
 }
 
-.App-link {
-  color: #61dafb;
+.shop-Page {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  padding: 1.5rem;
+  margin-top: 4rem;
+  font-family: noto;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.logo {
+  position: absolute;
+  top: 12pt;
+  left: 24pt;
+  z-index: 100;
+  width: 15rem;
+}
+
+.shop-Button {
+  margin: 1rem;
+}
+
+.shop-Select {
+  margin: 0.5rem;
 }
