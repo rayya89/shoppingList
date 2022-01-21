@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import '../App.css';
-import ItemList from './ItemList';
-import Modal from './Modal'
+import ItemList from '../components/ItemList';
+import Modal from '../components/Modal'
 
 function ShopPage() {
 

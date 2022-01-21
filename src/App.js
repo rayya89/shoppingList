@@ -1,9 +1,9 @@
-import React, { useState, useEffect } from "react";
+import React, { useEffect } from "react";
 import './App.css';
 import NavBar from './components/NavBar';
-import HomePage from './components/HomePage';
-import ShopPage from './components/ShopPage';
-import PageNotFound from './components/PageNotFound';
+import HomePage from './pages/HomePage'
+import ShopPage from './pages/ShopPage';
+import PageNotFound from './pages/PageNotFound';
 import { Routes, Route, useNavigate } from 'react-router-dom';
 
 
