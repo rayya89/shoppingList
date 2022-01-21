@@ -52,6 +52,7 @@ import React, {useState} from 'react';
         const result = {};
         if (!formInput.name) result.name="Name is required";
         if (!formInput.price) result.price="Price is required";
+        if (!formInput.price.match(/^[0-9]+$/)) result.price="Price must be a number";
         return result;
     }
         
