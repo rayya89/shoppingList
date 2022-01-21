@@ -1,12 +1,16 @@
 import React, { useState, useEffect } from "react";
 import '../App.css';
 import ItemList from '../components/ItemList';
-import Modal from '../components/Modal'
+import Modal from '../components/Modal';
+
+const emptyForm = {
+  name: "",
+  price: "",
+};
 
 function ShopPage() {
 
-  const [nameInput,setNameInput] = useState('');
-  const [priceInput,setPriceInput] = useState('');
+  const [formInput,setFormInput] = useState(emptyForm);
   const [items, setItems] = useState([]);
   const [view, setView] = useState('all');
   const [filteredItems, setFilteredItems] = useState([]);
@@ -73,19 +77,20 @@ function ShopPage() {
 
           { openModal &&
           <Modal 
-            nameInput={nameInput} 
-            setNameInput={setNameInput} 
-            priceInput={priceInput} 
-            setPriceInput={setPriceInput} 
+            formInput={formInput} 
+            setFormInput={setFormInput}  
             items={items} 
             setItems={setItems}
             setOpenModal={setOpenModal}
             />
           }
 
+
         <div className="shop-Select">
+            <label htmlFor="View">View</label>
+            <br />
             <select  name="items-filter" onChange={handleView}>
-                <option selected disabled>View Task</option>
+                <option value="">Select Tasks</option>
                 <option value="all">All</option>
                 <option value="completed">Completed</option>
                 <option value="uncompleted">Uncompleted</option>

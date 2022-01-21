@@ -54,7 +54,7 @@ This component passes and updates the states to the item component according to 
 
 #### Item:
 
-This component displays each filtered item and handles the deleted/ completed items.
+This component displays each filtered item and handles the deleted / completed items.
 
 ## License
 

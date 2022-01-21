@@ -115,6 +115,25 @@ p {
   font-family: noto;
 }
 
+.error {
+  width: 45rem;
+  text-align: justify;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  font-family: noto;
+  font-size: 15px;
+  color: rgb(206, 29, 29);
+}
+
+.error li {
+  float: left;
+  display: block;
+  text-align: center;
+  padding: 20px;
+  font-family: noto;
+  font-size: 15px;
+}
+
 .bg-Modal {
   width: 100%;
   height: 100%;
@@ -232,4 +251,5 @@ p {
 
 .shop-Select {
   margin: 0.5rem;
+  font-family: noto;
 }
